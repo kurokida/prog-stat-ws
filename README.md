@@ -3,7 +3,7 @@
 
 # シラバス
 
-## 第１回
+## 第１回（6月9日の2限と4限）
 jsPsych (de Leeuw et al., 2023) を使って、オンライン調査を行うためのプログラムを作成します。jsPsychのサンプルプログラム、jspsych-survey-likert.htmlを元にします。使用する主なプラグインは次の２つです。
 - [survey-likert](https://www.jspsych.org/7.3/plugins/survey-likert/)
 - [instructions](https://www.jspsych.org/7.3/plugins/instructions/)
