@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=“Content-Type” content=“text/html; charset=UTF-8”> 
+    <script src="../dist/jspsych.js"></script>
+    <script src="../dist/plugin-survey-likert.js"></script>
+    <script src="../dist/plugin-instructions.js"></script>
+    <link rel="stylesheet" href="../dist/jspsych.css" />
+  </head>
+  <body></body>
+  <script>
+
+    var jsPsych = initJsPsych({
+      on_finish: function() {
+        // jsPsych.data.displayData();
+        jsPsych.data.get().localSave('csv','mydata.csv');
+      }
+    });
+
+    var instruction = {
+      type: jsPsychInstructions,
+      pages: ['<p>このたびは調査にご協力いただきありがとうございます。</p><p>この調査では＊＊＊について回答していただきます。調査に要する時間は１０分です。</p><p>調査の参加に同意をいただける場合には「次へ」をクリックしてください。</p>',
+        '<p>次の画面で質問項目が表示されます。</p><p>それぞれの質問について「1.まったくそう思わない」から「5.非常にそう思う」の５段階で回答してください。</p>'],
+      show_clickable_nav: true,
+      show_page_number: true,
+      button_label_previous: '戻る',
+      button_label_next: '次へ',
+    };
+
+    var scale = ["1<br>まったくそう思わない", "2<br>あまりそう思わない", "3<br>どちらでもない", "4<br>ややそう思う", "5<br>非常にそう思う"];
+
+    // 質問の順番を参加者ごとにランダムに変更する
+    var likert1 = {
+        type: jsPsychSurveyLikert,
+        questions: [
+          {prompt: "Question 1", labels: scale},
+          {prompt: "Question 2", labels: scale},
+          {prompt: "Question 3", labels: scale},
+          {prompt: "Question 4", labels: scale},
+          {prompt: "Question 5", labels: scale}
+        ],
+        randomize_question_order: true,
+        scale_width: 500,
+        on_finish: function(data) {
+          // ここにデータを整形する命令を加える
+          jsPsych.data.addProperties(data.response);
+        }
+    };
+
+    var likert2 = {
+        type: jsPsychSurveyLikert,
+        questions: [
+          {prompt: "Question 6", labels: scale},
+          {prompt: "Question 7", labels: scale},
+          {prompt: "Question 8", labels: scale},
+          {prompt: "Question 9", labels: scale},
+          {prompt: "Question 10", labels: scale}
+        ],
+        randomize_question_order: true,
+        scale_width: 500,
+        on_finish: function(data) {
+          // ここにデータを整形する命令を加える
+          jsPsych.data.addProperties(data.response);
+        }
+    };
+
+    jsPsych.run([instruction, likert1, likert2]);
+    
+  </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../dist/jspsych.js"></script>
+    <script src="../dist/plugin-instructions.js"></script>
+    <script src="../dist/plugin-html-slider-response.js"></script>
+    <link rel="stylesheet" href="../dist/jspsych.css">
+  </head>
+  <body></body>
+  <script>
+
+    var jsPsych = initJsPsych({
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+
+    var trial_1 = {
+      type: jsPsychInstructions,
+      pages: ['<p>Welcome to the experiment.</p><p>This is the first set of instructions.</p><p>Click next to begin.</p>',
+        '<p>This is the second page of instructions.</p>',
+        '<p>This is the final page.</p>'],
+      show_clickable_nav: true
+    };
+
+    var trial_2 = {
+      type: jsPsychInstructions,
+      pages: ['<p>This is a new set of instructions.</p><p>Custom "Page X/Y" and next/previous button labels provide support for different languages.</p>',
+        '<p>This is the second page of instructions.</p>',
+        '<p>This is the final page.</p>'],
+      show_clickable_nav: true,
+      show_page_number: true,
+      button_label_previous: 'Anterior',
+      button_label_next: 'Próxima',
+      page_label: 'Página',
+    };
+
+    var trial_3 = {
+      type: jsPsychHtmlSliderResponse,
+      stimulus: '<div style="margin: 50px auto; width: 100px; height: 100px; background-color: rgb(46, 26, 122);"></div>',
+      labels: ['Purple', 'Blue'],
+      slider_width: 500,
+      require_movement: true,
+      prompt: '<p>Is this color closer to purple or blue? Use the slider above.</p>'
+    };
+
+    jsPsych.run([trial_1, trial_2, trial_3]);
+
+  </script>
+</html>

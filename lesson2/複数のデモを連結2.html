@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=“Content-Type” content=“text/html; charset=UTF-8”> 
+    <script src="../dist/jspsych.js"></script>
+    <script src="../dist/plugin-survey-likert.js"></script>
+    <script src="../dist/plugin-instructions.js"></script>
+    <script src="../dist/plugin-image-keyboard-response.js"></script>
+    <script src="../dist/plugin-survey-text.js"></script>
+    <script src="../dist/plugin-preload.js"></script>
+    <link rel="stylesheet" href="../dist/jspsych.css" />
+  </head>
+  <body></body>
+  <script>
+
+    var jsPsych = initJsPsych({
+      on_finish: function() {
+        // jsPsych.data.displayData();
+        jsPsych.data.get().localSave('csv','mydata.csv');
+      }
+    });
+
+    var images = [ // このプログラムで呈示する画像のファイル名を列挙します。フォルダの場所と名前に注意。
+        '../img/scissors.png',
+        '../img/pen.png',
+        '../img/battery.png'
+    ];
+
+    // 画像を使うプログラムでは、事前読み込みを行う必要があります。
+    // プラグインによっては自動で読み込む場合もありますが、常に手動で読み込むほうが安心です。
+    var preload = {
+        type: jsPsychPreload,
+        images: images,
+    }
+
+    var instruction = {
+      type: jsPsychInstructions,
+      pages: ['<p>このたびは調査にご協力いただきありがとうございます。</p><p>この調査では＊＊＊について回答していただきます。調査に要する時間は１０分です。</p><p>調査の参加に同意をいただける場合には「次へ」をクリックしてください。</p>',
+        '<p>最初に画像が表示されます。その後、年齢と出身地について回答してください。</p>'],
+      show_clickable_nav: true,
+      show_page_number: true,
+      button_label_previous: '戻る',
+      button_label_next: '次へ',
+    };
+
+    var trial_1 = {
+      type: jsPsychImageKeyboardResponse,
+      stimulus: '../img/pen.png',
+      choices: ['y','n'],
+      prompt: '<p>Have you seen this face before? Press y or n.</p>',
+      stimulus_duration: 1000
+    };
+
+    var survey_page1 = {
+      type: jsPsychSurveyText,
+      questions: [
+        {prompt: 'How old are you?', columns: 3, required: true, name: 'Age'},
+        {prompt: 'Where were you born?', placeholder: 'City, State/Province, Country', columns: 50, name: 'BirthLocation'}
+      ],
+      randomize_question_order: true,
+      on_finish: function(data) {
+        // ここにデータを整形する命令を加える
+        // https://www.jspsych.org/7.3/reference/jspsych-data/#jspsychdataaddproperties
+        jsPsych.data.addProperties(data.response);
+      }
+    };
+
+    jsPsych.run([instruction, trial_1, survey_page1]);
+    
+  </script>
+</html>
