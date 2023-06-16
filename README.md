@@ -17,7 +17,7 @@ jsPsych (de Leeuw et al., 2023) を使って、オンライン調査を行うた
 前回に引き続き、jsPsychについてです。今回のテーマは、
 - 出力ファイルの整形（ [jsPsych.data.addProperties](https://www.jspsych.org/7.3/reference/jspsych-data/#jspsychdataaddproperties) と [jsPsych.data.get().addToLast](https://www.jspsych.org/7.3/reference/jspsych-data/#addtolast)を使用）
 - デベロッパーツールの使用
-- デモプログラムの結合
+- デモプログラムの結合（例題1では[jspsych-instructions](https://github.com/jspsych/jsPsych/blob/main/examples/jspsych-instructions.html)と[jspsych-html-slider-response](https://github.com/jspsych/jsPsych/blob/main/examples/jspsych-html-slider-response.html)、例題2では[jspsych-instructions](https://github.com/jspsych/jsPsych/blob/main/examples/jspsych-instructions.html)と[jspsych-image-button-response](https://github.com/jspsych/jsPsych/blob/main/examples/jspsych-image-button-response.html)と[jspsych-survey-text](https://github.com/jspsych/jsPsych/blob/main/examples/jspsych-survey-text.html)）
 
 です。事前にChromeのインストールを済ませていただけると助かります。
 デモプログラムの結合では、既存のjsPsychのデモプログラムをつなぎあわせて、実際の実験プログラムに近づけるという作業を行います。
