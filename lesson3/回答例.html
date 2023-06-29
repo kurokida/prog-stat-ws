@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../dist/jspsych.js"></script>
+    <script src="../dist/plugin-image-keyboard-response.js"></script>
+    <script src="../dist/plugin-html-keyboard-response.js"></script>
+    <script src="../dist/plugin-preload.js"></script>
+    <link rel="stylesheet" href="../dist/jspsych.css">
+  </head>
+  <body></body>
+  <script>
+
+    var jsPsych = initJsPsych({
+        on_finish: function() {
+            // jsPsych.data.displayData();
+            jsPsych.data.get().localSave('csv','mydata.csv');
+        }
+    });
+
+    var images = [ // このプログラムで呈示する画像のファイル名を列挙します。フォルダの場所と名前に注意。
+        '../img/scissors.png',
+        '../img/pen.png',
+        '../img/battery.png'
+    ];
+
+    // 画像を使うプログラムでは、事前読み込みを行う必要があります。
+    // プラグインによっては自動で読み込む場合もありますが、常に手動で読み込むほうが安心です。
+    var preload = {
+        type: jsPsychPreload,
+        images: images,
+        auto_preload: true
+    }
+
+    var fixation = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<p style="font-size: 48px; font-weight: bold;">+</p>',
+        choices: "NO_KEYS", // どのキーの入力も受け付けない
+        trial_duration: 1000, // + の呈示時間（ms）
+        data: {
+            task: "fixation" // task列を追加
+        }
+    };
+    
+    var trial = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: jsPsych.timelineVariable('stim'),
+        choices: ["ArrowLeft", "ArrowRight"],
+        prompt: '<p>左矢印キー、または右矢印キーを押してください</p>',
+        data: {
+            task: "image_task" // task列を追加
+        }
+    };
+
+    var all_trials = {
+        timeline: [fixation, trial],
+        timeline_variables: [ 
+            {stim: '../img/scissors.png'},
+            {stim: '../img/pen.png'},
+            {stim: '../img/battery.png'},
+        ],
+        randomize_order: true,
+        repetitions: 2
+    };
+
+    jsPsych.run([preload, all_trials]);
+
+  </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../dist/jspsych.js"></script>
+    <script src="../dist/plugin-image-keyboard-response.js"></script>
+    <script src="../dist/plugin-html-keyboard-response.js"></script>
+    <script src="../dist/plugin-preload.js"></script>
+    <link rel="stylesheet" href="../dist/jspsych.css">
+  </head>
+  <body></body>
+  <script>
+
+    var jsPsych = initJsPsych({
+      on_finish: function() {
+        jsPsych.data.displayData();
+      }
+    });
+
+    var images = [ // このプログラムで呈示する画像のファイル名を列挙します。フォルダの場所と名前に注意。
+        '../img/scissors.png',
+        '../img/pen.png',
+        '../img/battery.png'
+    ];
+
+    // 画像を使うプログラムでは、事前読み込みを行う必要があります。
+    // プラグインによっては自動で読み込む場合もありますが、常に手動で読み込むほうが安心です。
+    var preload = {
+        type: jsPsychPreload,
+        images: images,
+        auto_preload: true
+    }
+
+
+    // 画面の中心に + を呈示するためのオブジェクトです。ここに記述しただけでは画面には呈示されないことに注意してください。
+    var fixation = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<p style="font-size: 48px; font-weight: bold;">+</p>',
+        choices: "NO_KEYS", // どのキーの入力も受け付けない
+        trial_duration: 1000, // + の呈示時間（ms）
+    };
+    
+    var trial1 = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: '../img/scissors.png',
+        choices: ["ArrowLeft", "ArrowRight"],
+        prompt: '<p>左矢印キー、または右矢印キーを押してください</p>',
+    };
+
+    jsPsych.run([ ]);
+
+  </script>
+</html>
