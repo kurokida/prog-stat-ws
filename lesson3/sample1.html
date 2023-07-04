@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type"  content="text/html; charset=UTF-8">
     <script src="../dist/jspsych.js"></script>
     <script src="../dist/plugin-image-keyboard-response.js"></script>
     <script src="../dist/plugin-html-keyboard-response.js"></script>
@@ -34,7 +35,7 @@
     // 画面の中心に + を呈示するためのオブジェクトです。ここに記述しただけでは画面には呈示されないことに注意してください。
     var fixation = {
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: '<p style="font-size: 48px; font-weight: bold;">+</p>',
+        stimulus: '<p style="font-size: 48px; font-weight: bold;">+</p>', // <p>タグを使っています。
         choices: "NO_KEYS", // どのキーの入力も受け付けない
         trial_duration: 1000, // + の呈示時間（ms）
     };

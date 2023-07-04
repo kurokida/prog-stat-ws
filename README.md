@@ -2,14 +2,14 @@
 プログラミングと統計のワークショップ
 
 # お知らせ
-6/23（金）はお休みです。
-6/30（金）はお休みです。
-9/15（金）はお休みです。
-12/1（金）はお休みです。
+- 6/23（金）はお休みです。
+- 6/30（金）はお休みです。
+- 9/15（金）はお休みです。
+- 12/1（金）はお休みです。
 
 # シラバス
 
-## 第１回（6月9日の2限と4限）
+## 第１回 jsPsychを使ってみよう（6月9日の2限と4限）
 jsPsych (de Leeuw et al., 2023) を使って、オンライン調査を行うためのプログラムを作成します。jsPsychのサンプルプログラム、jspsych-survey-likert.htmlを元にします。使用する主なプラグインは次の２つです。
 - [survey-likert](https://www.jspsych.org/7.3/plugins/survey-likert/)
 - [instructions](https://www.jspsych.org/7.3/plugins/instructions/)
@@ -27,6 +27,11 @@ jsPsych (de Leeuw et al., 2023) を使って、オンライン調査を行うた
 
 です。事前にChromeのインストールを済ませていただけると助かります。
 デモプログラムの結合では、既存のjsPsychのデモプログラムをつなぎあわせて、実際の実験プログラムに近づけるという作業を行います。
+
+## 第３回 Timeline variablesを使いこなそう（7月7日の2限と4限）
+この回では、timeline variablesを使って、試行ごとに刺激を変化させる方法を学びます。関連して刺激の呈示順番をランダムにし、繰り返して呈示する方法について説明します。[本家のチュートリアル](https://www.jspsych.org/7.3/tutorials/rt-task/)でも詳しく説明されています。
+
+## 第４回 オンラインで動かそう（7月14日の2限と4限）
 
 # 引用文献
 de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.

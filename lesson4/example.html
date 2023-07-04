@@ -5,7 +5,9 @@
     <script src="../dist/jspsych.js"></script>
     <script src="../dist/plugin-image-keyboard-response.js"></script>
     <script src="../dist/plugin-html-keyboard-response.js"></script>
+    <script src="../dist/plugin-instructions.js"></script>
     <script src="../dist/plugin-preload.js"></script>
+    <script src="../dist/plugin-call-function.js"></script>
     <link rel="stylesheet" href="../dist/jspsych.css">
   </head>
   <body></body>
@@ -17,6 +19,22 @@
             jsPsych.data.get().localSave('csv','mydata.csv');
         }
     });
+
+    const myrandID = jsPsych.randomization.randomID(8); // 実験ごとに参加者にランダムに割り当てる文字列
+
+    const instruction = {
+        type: jsPsychInstructions,
+        pages: ['<p>今から実験を始めます。</p>'],
+        show_clickable_nav: true,
+        show_page_number: true,
+        button_label_previous: '戻る',
+        button_label_next: '次へ',
+        page_label: 'ページ',
+        on_finish: function(data){
+            jsPsych.data.addProperties({
+                randomID: myrandID})
+        }
+    };
 
     var images = [ // このプログラムで呈示する画像のファイル名を列挙します。フォルダの場所と名前に注意。
         '../img/scissors.png',
@@ -63,7 +81,25 @@
         repetitions: 2
     };
 
-    jsPsych.run([preload, all_trials]);
+    var save_trial = {
+        type: jsPsychCallFunction,
+        async: true,
+        func: function(done){
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'write_data.php');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+            if(xhr.status == 200){
+                var response = JSON.parse(xhr.responseText);
+                console.log(response.success);
+            }
+            done(); // invoking done() causes experiment to progress to next trial.
+            };
+            xhr.send(jsPsych.data.get().json());
+        }
+    }
+
+    jsPsych.run([preload, instruction, all_trials, save_trial]);
 
   </script>
 </html>
