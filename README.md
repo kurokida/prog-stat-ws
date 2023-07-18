@@ -32,6 +32,13 @@ jsPsych (de Leeuw et al., 2023) を使って、オンライン調査を行うた
 この回では、timeline variablesを使って、試行ごとに刺激を変化させる方法を学びます。関連して刺激の呈示順番をランダムにし、繰り返して呈示する方法について説明します。[本家のチュートリアル](https://www.jspsych.org/7.3/tutorials/rt-task/)でも詳しく説明されています。
 
 ## 第４回 オンラインで動かそう（7月14日の2限と4限）
+この回では、みなさんが作ったプログラムをインターネット上で公開して、オンライン実験を実際に行う方法について解説をします。大学のサーバーで公開する方法と、[Cognition](https://www.cognition.run/)というjsPsych専用のホスティングサービスを使用する方法について説明します。[Cognitionはいくつかの制約がありますが無料で利用することが可能です。](https://www.cognition.run/#pricing)
+
+## 第５回 MATLAB + Psychtoolbox（7月21日の2限と4限）
+実験棟でよく使用される MATLAB と [Psychtoolbox (Brainard, 1997; Pelli 1997; Kleiner et al., 2007）](http://psychtoolbox.org/) について解説をします。[九州大学の学生は無料でMATLABを使用することができます。](https://soft.iii.kyushu-u.ac.jp/MATLAB/index.html) MATLAB + Psychtoolbox ではオンライン実験を行うことができませんのでご注意ください。プログラミングの学習というよりは、みなさんのパソコンでデモプログラムを動かせるようにすることを目標とします。
 
 # 引用文献
-de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.
+- Brainard, D.H.（1997）The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
+- de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.
+- Kleiner, M., Brainard, D. & Pelli, D.（2007）What’s new in Psychtoolbox-3? *Perception, 36*, ECVP Abstract Supplement.
+- Pelli, D.G.（1997）The VideoToolbox software for visual psychophysics: Transforming numbers into movies. *Spatial Vision 10*, 437-442.
