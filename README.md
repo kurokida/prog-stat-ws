@@ -37,6 +37,8 @@ jsPsych (de Leeuw et al., 2023) を使って、オンライン調査を行うた
 ## 第５回 MATLAB + Psychtoolbox（7月21日の2限と4限）
 実験棟でよく使用される MATLAB と [Psychtoolbox (Brainard, 1997; Pelli 1997; Kleiner et al., 2007）](http://psychtoolbox.org/) について解説をします。[九州大学の学生は無料でMATLABを使用することができます。](https://soft.iii.kyushu-u.ac.jp/MATLAB/index.html) MATLAB + Psychtoolbox ではオンライン実験を行うことができませんのでご注意ください。プログラミングの学習というよりは、みなさんのパソコンでデモプログラムを動かせるようにすることを目標とします。
 
+[MATLABのシステム要件を事前にご確認ください。](https://jp.mathworks.com/support/requirements/matlab-system-requirements.html)
+
 # 引用文献
 - Brainard, D.H.（1997）The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
 - de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.
