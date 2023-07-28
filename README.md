@@ -39,8 +39,12 @@ jsPsych (de Leeuw et al., 2023) を使って、オンライン調査を行うた
 
 [MATLABのシステム要件を事前にご確認ください。](https://jp.mathworks.com/support/requirements/matlab-system-requirements.html)
 
+## 第６回 PsychoPyの紹介（7月28日の2限と4限）
+PsychoPy (Peirce et al., 2019) は[公式サイト](https://www.psychopy.org/index.html)からダウンロードしてください。教材として、[小川洋和先生のPsychoPy講座](https://ogwlab.org/?page_id=460)、[十河宏行先生のPsychoPy Builderで作る心理学実験](http://www.s12600.net/psy/python/ppb/html/index.html)、[公式のYouTubeチャンネル](https://www.youtube.com/channel/UCQo2aB6cXJasHyXJp0afaWg)がお勧めです。
+
 # 引用文献
 - Brainard, D.H.（1997）The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
 - de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.
 - Kleiner, M., Brainard, D. & Pelli, D.（2007）What’s new in Psychtoolbox-3? *Perception, 36*, ECVP Abstract Supplement.
+- Peirce, J.W., Gray, J.R., Simpson, S., MacAskill, M.R., Höchenberger, R., Sogo, H., Kastman, E., Lindeløv, J. (2019). PsychoPy2: experiments in behavior made easy. Behavior Research Methods. [10.3758/s13428-018-01193-y](https://link.springer.com/article/10.3758/s13428-018-01193-y)
 - Pelli, D.G.（1997）The VideoToolbox software for visual psychophysics: Transforming numbers into movies. *Spatial Vision 10*, 437-442.
