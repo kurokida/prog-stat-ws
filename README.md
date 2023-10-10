@@ -43,12 +43,12 @@ PsychoPy (Peirce et al., 2019) は[公式サイト](https://www.psychopy.org/ind
 このワークショップでは、[JASP (JASP Team, 2023)](https://jasp-stats.org/), [R (R Core Team, 2022)](https://cran.rstudio.com/) ([RStuido (Posit team, 2022)](https://posit.co/download/rstudio-desktop/)), [HAD (清水, 2016)](https://norimune.net/had) を主に使用します。それぞれのツールで、t検定を行う方法を中心に話を進めます。特にJASPでは簡単にベイズ統計に基づいたt検定を行うことが可能です。そのあたりまでお話ができればと思っています。
 
 # 引用文献
-- Brainard, D.H.（1997）The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
+- Brainard, D.H. (1997). The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
 - de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.
-- JASP Team (2023). *JASP* (Version 0.17.2)[Computer software].
-- Kleiner, M., Brainard, D. & Pelli, D.（2007）What’s new in Psychtoolbox-3? *Perception, 36*, ECVP Abstract Supplement.
+- JASP Team (2023). JASP (Version 0.17.2) [Computer software].
+- Kleiner, M., Brainard, D. & Pelli, D. (2007). What’s new in Psychtoolbox-3? *Perception, 36*, ECVP Abstract Supplement.
 - Peirce, J.W., Gray, J.R., Simpson, S., MacAskill, M.R., Höchenberger, R., Sogo, H., Kastman, E., Lindeløv, J. (2019). PsychoPy2: experiments in behavior made easy. Behavior Research Methods. [10.3758/s13428-018-01193-y](https://link.springer.com/article/10.3758/s13428-018-01193-y)
-- Pelli, D.G.（1997）The VideoToolbox software for visual psychophysics: Transforming numbers into movies. *Spatial Vision 10*, 437-442.
+- Pelli, D.G. (1997). The VideoToolbox software for visual psychophysics: Transforming numbers into movies. *Spatial Vision 10*, 437-442.
 - R Core Team (2022). R: A language and environment for statistical computing. *R Foundation for Statistical Computing, Vienna, Austria.*　**citation()コマンドで確認可能**
 - Posit team (2022). RStudio: Integrated Development Environment for *R. Posit Software, PBC, Boston, MA.* **RStudio.Version()コマンドで確認可能**
-- 清水裕士 (2016). フリーの統計分析ソフトHAD：機能の紹介と統計学習・教育，研究実践における利用方法の提案　 メディア・情報・コミュニケーション研究, 1, 59-73.
+- 清水 裕士 (2016). フリーの統計分析ソフトHAD：機能の紹介と統計学習・教育，研究実践における利用方法の提案　 メディア・情報・コミュニケーション研究, 1, 59-73.
