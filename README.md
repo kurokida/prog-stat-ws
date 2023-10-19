@@ -3,6 +3,7 @@
 
 # お知らせ
 - 10/13（金）から統計ワークショップを始めます。基本的には毎週金曜日の14:50開始です。
+- 10/27（金）と11/3（金）はお休みです。
 
 # シラバス
 
@@ -42,11 +43,20 @@ PsychoPy (Peirce et al., 2019) は[公式サイト](https://www.psychopy.org/ind
 ## 第７回 統計ツールを使ってみよう（10月13日の4限）
 このワークショップでは、[JASP (JASP Team, 2023)](https://jasp-stats.org/), [R (R Core Team, 2022)](https://cran.rstudio.com/) ([RStuido (Posit team, 2022)](https://posit.co/download/rstudio-desktop/)), [HAD (清水, 2016)](https://norimune.net/had) を主に使用します。それぞれのツールで、t検定を行う方法を中心に話を進めます。特にJASPでは簡単にベイズ統計に基づいたt検定を行うことが可能です。そのあたりまでお話ができればと思っています。
 
+## 第８回 統計ツールを使ってみよう２（10月20日の4限）
+前回は大まかな話で終わったので、具体的にみなさんのパソコンで操作をしてもらいながら、JASPとRになじんでもらおうと思います。さらに、ベイズファクターについても簡単にご紹介する予定です。
+
+## 第９回 SuperpowerでANOVAの検定力を調べよう（11月10日の4限）
+前半はベイズファクターの話をします。後半は[Lakens & Caldwell (2021)](https://journals.sagepub.com/doi/10.1177/2515245920951503) を読みながら、SuperpowerでANOVAの検定力を調べます。SuperpowerはRのライブラリですが、Superpowerと同じことをウェブで行うことができます。
+- [ANOVA_power](https://arcaldwell49.shinyapps.io/anova-power/) 
+- [ANOVA_exact](https://arcaldwell49.shinyapps.io/anova-exact/)
+
 # 引用文献
 - Brainard, D.H. (1997). The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
 - de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.
 - JASP Team (2023). JASP (Version 0.17.2) [Computer software].
 - Kleiner, M., Brainard, D. & Pelli, D. (2007). What’s new in Psychtoolbox-3? *Perception, 36*, ECVP Abstract Supplement.
+- Lakens D, & Caldwell A.R. (2021). Simulation-Based Power Analysis for Factorial Analysis of Variance Designs. Advances in Methods and Practices in Psychological Science, 4(1). [doi:10.1177/2515245920951503](https://journals.sagepub.com/doi/10.1177/2515245920951503)
 - Peirce, J.W., Gray, J.R., Simpson, S., MacAskill, M.R., Höchenberger, R., Sogo, H., Kastman, E., Lindeløv, J. (2019). PsychoPy2: experiments in behavior made easy. Behavior Research Methods. [10.3758/s13428-018-01193-y](https://link.springer.com/article/10.3758/s13428-018-01193-y)
 - Pelli, D.G. (1997). The VideoToolbox software for visual psychophysics: Transforming numbers into movies. *Spatial Vision 10*, 437-442.
 - R Core Team (2022). R: A language and environment for statistical computing. *R Foundation for Statistical Computing, Vienna, Austria.*　**citation()コマンドで確認可能**
