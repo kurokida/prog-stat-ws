@@ -47,7 +47,7 @@ PsychoPy (Peirce et al., 2019) は[公式サイト](https://www.psychopy.org/ind
 前回は大まかな話で終わったので、具体的にみなさんのパソコンで操作をしてもらいながら、JASPとRになじんでもらおうと思います。さらに、ベイズファクターについても簡単にご紹介する予定です。
 
 ## 第９回 SuperpowerでANOVAの検定力を調べよう（11月10日の4限）
-前半はベイズファクターの話をします。後半は[Lakens & Caldwell (2021)](https://journals.sagepub.com/doi/10.1177/2515245920951503) を読みながら、SuperpowerでANOVAの検定力を調べます。SuperpowerはRのライブラリですが、Superpowerと同じことをウェブで行うことができます。
+[Lakens & Caldwell (2021)](https://journals.sagepub.com/doi/10.1177/2515245920951503) を読みながら、SuperpowerでANOVAの検定力を調べます。SuperpowerはRのライブラリですが、Superpowerと同じことをウェブで行うことができます。
 - [ANOVA_power](https://arcaldwell49.shinyapps.io/anova-power/) 
 - [ANOVA_exact](https://arcaldwell49.shinyapps.io/anova-exact/)
 
