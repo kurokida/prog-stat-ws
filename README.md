@@ -51,6 +51,15 @@ PsychoPy (Peirce et al., 2019) は[公式サイト](https://www.psychopy.org/ind
 - [ANOVA_power](https://arcaldwell49.shinyapps.io/anova-power/) 
 - [ANOVA_exact](https://arcaldwell49.shinyapps.io/anova-exact/)
 
+# JASPを使って分析を行っている論文の探し方
+JASPを使って分析を行っている論文の探し方についてご紹介しておきます。[九州大学附属図書館のデータベース](https://www.lib.kyushu-u.ac.jp/ja/databases)から Web of Science を使います。基本検索で、トピックに「JASP」と入力。被引用数の多い順で並べると、
+- Bayesian inference for psychology. Part II: Example applications with JASP
+- The JASP guidelines for conducting and reporting a Bayesian analysis
+- JASP: Graphical Statistical Software for Common Statistical Designs
+
+などが見つかると思います。これらの論文の「被引用数」をクリックすると、JASPを使って分析を行っている論文を見つけることができます。
+
+
 # 引用文献
 - Brainard, D.H. (1997). The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
 - de Leeuw, J.R., Gilbert, R.A., & Luchterhandt, B. (2023). jsPsych: Enabling an open-source collaborative ecosystem of behavioral experiments. *Journal of Open Source Software, 8*(85), 5351, https://joss.theoj.org/papers/10.21105/joss.05351.
