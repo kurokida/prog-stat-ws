@@ -1,3 +1,5 @@
+# 最初に、Session -> Set working directory -> To source file location を実行してください。
+
 # install.packages("tidyverse") # tidyverseをインストールするときだけ必要
 library(tidyverse) # データの集計作業などに便利なライブラリです
 
@@ -5,7 +7,6 @@ skip_row_num = 12 # 重要！　必ず、自分のデータに適した数字に
 # CSVファイルの中でデータの見出しの行から1を引いた値を指定します。
 # つまり、CSVファイルの先頭行から、skip_row_num行までのデータは読み込まれません。
 
-# 最初に、Session -> Set working directory -> To source file location を実行してください。
 current_directory <- getwd() # 現在のディレクトリ（フォルダ）
 # 参加者ひとりにつき、ひとつのCSVファイルがあって、すべてのCSVファイルが
 # csv_filesという名前のフォルダに保存されていることを想定しています。
@@ -48,19 +49,32 @@ write.csv(rt_data, "rt_data.csv", row.names = FALSE) # 集計結果をcsvファ�
 
 ############################################
 # STEP2
-# 条件については上と同じ。各条件ごとの正当数を算出
+# 条件については上と同じ。各条件ごとの正当率を算出
+correct_rate_data <- all_data %>%
+  filter(image_type != 0) %>% # 練習のデータを取り除く
+  group_by(participant_ID, image_type, ecc) %>% # かっこの中はグループ化したい順番
+  summarise(correct_rate = sum(correct == 1) / length(correct)) %>% # 正答率
+  pivot_wider(names_from = c(image_type, ecc),
+              values_from = correct_rate)
+
+############################################
+# 以下は、平均値や正答率よりも複雑な処理を行いたいときのための情報です。
+# STEP3
+# 条件ごとの正当数を算出しています。通常はSTEP2と同じ方法で大丈夫ですが、
+# あえて、group_nestとmap_int関数を使用しています。
+
 nCorrect_data <- all_data %>%
   filter(image_type != 0) %>% # 練習のデータを取り除く
   group_nest(participant_ID, image_type, ecc) %>% # 入れ子構造
-  mutate(nCorrect = map_int(data, ~ sum(.$correct == 1))) %>%  # 正当数
+  mutate(nCorrect = map_int(data, ~ sum(.$correct == 1))) %>%  # 正当数。ドット（ピリオド）はdataリストのひとつひとつに対応
   select(participant_ID, image_type, ecc, nCorrect) %>%
   pivot_wider(names_from = c(image_type, ecc),
               values_from = nCorrect)
 
 ############################################
-# STEP3
-# 条件については上と同じ。各条件ごとの正当率を算出
-correct_rate_data <- all_data %>%
+# STEP4
+# 条件ごとの正答率を算出しています。STEP3と同様にgroup_nestとmap_dbl関数を使用しています。
+correct_rate_data2 <- all_data %>%
   filter(image_type != 0) %>% # 練習のデータを取り除く
   group_nest(participant_ID, image_type, ecc) %>% # 入れ子構造
   mutate(correct_rate = map_dbl(data, ~ {
