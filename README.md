@@ -2,8 +2,7 @@
 プログラミングと統計のワークショップ
 
 # お知らせ
-- 10/13（金）から統計ワークショップを始めます。基本的には毎週金曜日の14:50開始です。
-- 10/27（金）と11/3（金）はお休みです。
+- 11/24（金）と12/1（金）はワークショップやります！
 
 # シラバス
 
@@ -51,6 +50,12 @@ PsychoPy (Peirce et al., 2019) は[公式サイト](https://www.psychopy.org/ind
 - [ANOVA_power](https://arcaldwell49.shinyapps.io/anova-power/) 
 - [ANOVA_exact](https://arcaldwell49.shinyapps.io/anova-exact/)
 
+## 第１０回 lavaanとHADを使って確認的因子分析と共分散構造分析（11月24日の4限）
+lavaan (Rosseel, 2012)は、Rで確認的因子分析および共分散構造分析（SEM）を行うためのツールです。この回では、lavaanとHADを使って確認的因子分析と共分散構造分析を行う方法を解説します。
+
+## 第１１回 tidyverseで集計、分散分析、探索的因子分析（12月1日の4限）
+[こちら](https://psycho.hes.kyushu-u.ac.jp/~kurokid/wp/stat_tips/tidyverse/)で公開している内容を詳しくご説明します。さらに、RとHADを使って、分散分析、探索的因子分析を行う方法について解説します。
+
 # JASPを使って分析を行っている論文の探し方
 JASPを使って分析を行っている論文の探し方についてご紹介しておきます。[九州大学附属図書館のデータベース](https://www.lib.kyushu-u.ac.jp/ja/databases)から Web of Science を使います。基本検索で、トピックに「JASP」と入力。被引用数の多い順で並べると、
 - Bayesian inference for psychology. Part II: Example applications with JASP
@@ -58,7 +63,6 @@ JASPを使って分析を行っている論文の探し方についてご紹介�
 - JASP: Graphical Statistical Software for Common Statistical Designs
 
 などが見つかると思います。これらの論文の「被引用数」をクリックすると、JASPを使って分析を行っている論文を見つけることができます。
-
 
 # 引用文献
 - Brainard, D.H. (1997). The Psychophysics Toolbox. *Spatial Vision, 10*, 433-436. 
@@ -69,5 +73,6 @@ JASPを使って分析を行っている論文の探し方についてご紹介�
 - Peirce, J.W., Gray, J.R., Simpson, S., MacAskill, M.R., Höchenberger, R., Sogo, H., Kastman, E., Lindeløv, J. (2019). PsychoPy2: experiments in behavior made easy. Behavior Research Methods. [10.3758/s13428-018-01193-y](https://link.springer.com/article/10.3758/s13428-018-01193-y)
 - Pelli, D.G. (1997). The VideoToolbox software for visual psychophysics: Transforming numbers into movies. *Spatial Vision 10*, 437-442.
 - R Core Team (2022). R: A language and environment for statistical computing. *R Foundation for Statistical Computing, Vienna, Austria.*　**citation()コマンドで確認可能**
+- Rosseel, Y. (2012). lavaan: An R Package for Structural Equation Modeling. *Journal of Statistical Software, 48(2)*, 1–36. [https://doi.org/10.18637/jss.v048.i02](https://doi.org/10.18637/jss.v048.i02)
 - Posit team (2022). RStudio: Integrated Development Environment for *R. Posit Software, PBC, Boston, MA.* **RStudio.Version()コマンドで確認可能**
 - 清水 裕士 (2016). フリーの統計分析ソフトHAD：機能の紹介と統計学習・教育，研究実践における利用方法の提案　 メディア・情報・コミュニケーション研究, 1, 59-73.
