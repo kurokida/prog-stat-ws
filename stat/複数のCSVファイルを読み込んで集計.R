@@ -20,6 +20,11 @@ file_list <-
              pattern = "\\.csv$",
              full.names = TRUE)
 
+# お勧め！　read_csv関数を使うと複数のCSVファイルを一気に読み込むことができます。
+# さらに、idを指定することで、ファイル名を実験参加者情報として使用できるようになります。
+# 少し下のfor文とほぼ同じことを、１行で実現できます！
+# all_data <- read_csv(file_list, skip = skip_row_num, col_names = TRUE, id = "participant_ID")
+
 all_data <- NULL # 全員分のデータをひとつのデータフレーム（tibble）に集約します
 id <- 1 # 参加者にidを割り当てることにします。CSVファイルに参加者識別情報がある場合は不要
 for (file_name in file_list) {
