@@ -2,7 +2,7 @@
 プログラミングと統計のワークショップ
 
 # お知らせ
-- 11/24（金）と12/1（金）はワークショップやります！
+- 1/19（金）開催します！
 
 # シラバス
 
@@ -55,6 +55,10 @@ lavaan (Rosseel, 2012)は、Rで確認的因子分析および共分散構造分
 
 ## 第１１回 tidyverseで集計、分散分析、探索的因子分析（12月1日の4限）
 [こちら](https://psycho.hes.kyushu-u.ac.jp/~kurokid/wp/stat_tips/tidyverse/)で公開している内容を詳しくご説明します。さらに、RとHADを使って、分散分析、探索的因子分析を行う方法について解説します。
+
+## 第12回　一般化線形混合モデル
+JASPのデータライブラリに含まれる「Larks and Owls」のデータを使って一般化線形混合モデルの解説を行います。なおこのデータは[論文として公開されています](https://online.ucpress.edu/collabra/article/8/1/57536/195006/Mind-wandering-in-Larks-and-Owls-The-Effects-of
+)。Rの関数としては glmer を使用します。
 
 # JASPを使って分析を行っている論文の探し方
 JASPを使って分析を行っている論文の探し方についてご紹介しておきます。[九州大学附属図書館のデータベース](https://www.lib.kyushu-u.ac.jp/ja/databases)から Web of Science を使います。基本検索で、トピックに「JASP」と入力。被引用数の多い順で並べると、
