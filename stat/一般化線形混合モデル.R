@@ -10,6 +10,8 @@ dat$Gender <- as.factor(dat$Gender)
 dat$Session <- as.factor(dat$Session)
 dat$TimeOfDay <- as.factor(dat$TimeOfDay)
 
+barplot(table(dat$MWCount), xlab="マインドワンダリングの回数", ylab="頻度", col="skyblue")
+
 # 一般化線形混合モデル
 fit1 <- glmer(MWCount ~ Chronotype * TimeOfDay + Sleep + (1 | Subject), data = dat, family = poisson)
 result1 <- summary(fit1)
