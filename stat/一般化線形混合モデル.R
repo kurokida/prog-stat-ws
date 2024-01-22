@@ -12,9 +12,15 @@ dat$TimeOfDay <- as.factor(dat$TimeOfDay)
 
 barplot(table(dat$MWCount), xlab="マインドワンダリングの回数", ylab="頻度", col="skyblue")
 
-# 一般化線形混合モデル
+# 一般化線形混合モデル（交互作用なし）
+fit0 <- glmer(MWCount ~ Chronotype + TimeOfDay + Sleep + (1 | Subject), data = dat, family = poisson)
+result0 <- summary(fit0)
+
+# 一般化線形混合モデル（交互作用あり）
 fit1 <- glmer(MWCount ~ Chronotype * TimeOfDay + Sleep + (1 | Subject), data = dat, family = poisson)
 result1 <- summary(fit1)
+
+anova(fit0, fit1) # 尤度比検定を行うと fit1のほうが適切なモデル
 
 # JASPでの Estimated marginal means（周辺平均）
 # 朝型の人が朝に課題を行った時の期待値（睡眠時間については全体の平均値）

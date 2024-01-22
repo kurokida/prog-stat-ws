@@ -2,7 +2,7 @@
 プログラミングと統計のワークショップ
 
 # お知らせ
-- 1/19（金）開催します！
+- 1/26（金）、2/9（金）開催します！　おそらく2/9が最終回です。
 
 # シラバス
 
@@ -56,9 +56,15 @@ lavaan (Rosseel, 2012)は、Rで確認的因子分析および共分散構造分
 ## 第１１回 tidyverseで集計、分散分析、探索的因子分析（12月1日の4限）
 [こちら](https://psycho.hes.kyushu-u.ac.jp/~kurokid/wp/stat_tips/tidyverse/)で公開している内容を詳しくご説明します。さらに、RとHADを使って、分散分析、探索的因子分析を行う方法について解説します。
 
-## 第12回　一般化線形混合モデル
+## 第12回　一般化線形混合モデル前編（1月19日の4限）
 JASPのデータライブラリに含まれる「Larks and Owls」のデータを使って一般化線形混合モデルの解説を行います。なおこのデータは[論文として公開されています](https://online.ucpress.edu/collabra/article/8/1/57536/195006/Mind-wandering-in-Larks-and-Owls-The-Effects-of
 )。Rの関数としては glmer を使用します。
+
+## 第13回　一般化線形混合モデル後編（1月26日の4限）
+一般化線形混合モデルでの交互作用の扱い方と、JASPでの分析方法について解説します。
+
+## 第14回　シミュレーションに基づいたサンプルサイズ設計（2月9日の4限）
+小杉先生、紀ノ定先生、清水先生による[数値シミュレーションで読み解く統計のしくみ](https://gihyo.jp/book/2023/978-4-297-13665-9)の内容を簡潔にご紹介します。この本の[サポートサイト](https://github.com/ghmagazine/simulation_stats_book)ではサンプルコードが公開されています。ワークショップの際に主に説明をするのは、6.3 サンプルサイズ設計の実践で、[コードは199行目以降になります。](https://github.com/ghmagazine/simulation_stats_book/blob/main/ch6/ch6.R#L199)
 
 # JASPを使って分析を行っている論文の探し方
 JASPを使って分析を行っている論文の探し方についてご紹介しておきます。[九州大学附属図書館のデータベース](https://www.lib.kyushu-u.ac.jp/ja/databases)から Web of Science を使います。基本検索で、トピックに「JASP」と入力。被引用数の多い順で並べると、
@@ -80,3 +86,4 @@ JASPを使って分析を行っている論文の探し方についてご紹介�
 - Rosseel, Y. (2012). lavaan: An R Package for Structural Equation Modeling. *Journal of Statistical Software, 48(2)*, 1–36. [https://doi.org/10.18637/jss.v048.i02](https://doi.org/10.18637/jss.v048.i02)
 - Posit team (2022). RStudio: Integrated Development Environment for *R. Posit Software, PBC, Boston, MA.* **RStudio.Version()コマンドで確認可能**
 - 清水 裕士 (2016). フリーの統計分析ソフトHAD：機能の紹介と統計学習・教育，研究実践における利用方法の提案　 メディア・情報・コミュニケーション研究, 1, 59-73.
+- 小杉考司・紀ノ定保礼・清水裕士 (2023). 数値シミュレーションで読み解く統計のしくみ　技術評論社
