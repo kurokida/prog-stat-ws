@@ -21,6 +21,7 @@ fit1 <- glmer(MWCount ~ Chronotype * TimeOfDay + Sleep + (1 | Subject), data = d
 result1 <- summary(fit1)
 
 anova(fit0, fit1) # 尤度比検定を行うと fit1のほうが適切なモデル
+# JASPでの、ANOVA Summaryに対応
 
 # JASPでの Estimated marginal means（周辺平均）
 # 朝型の人が朝に課題を行った時の期待値（睡眠時間については全体の平均値）
