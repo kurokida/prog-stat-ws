@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="../dist/jspsych.js"></script>
+    <script src="../dist/plugin-html-button-response.js"></script>
+    <script src="../dist/plugin-instructions.js"></script>
+    <link rel="stylesheet" href="../dist/jspsych.css">
+  </head>
+  <body></body>
+  <script>
+
+  var jsPsych = initJsPsych({
+    on_finish: function() {
+    //   jsPsych.data.get().localSave('csv','mydata.csv');
+    }
+  });
+
+  var timeline = [];
+
+  var instruction = {
+    type: jsPsychInstructions,
+    pages: ['<p>今からストループ課題を行います</p>'],
+    show_clickable_nav: true
+  };
+
+  timeline.push(instruction)
+
+  var stroop1 = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: '<p style="color: red; font-size: 48px; font-weight: bold;">GREEN</p>',
+    choices: ['Green', 'Blue', 'Red'],
+    button_layout: "flex",
+    prompt: "<p>What color is this word? (flex layout)</p>",
+    on_finish: function(data){
+        // console.log(data.response)
+        if (data.response === 2) {
+          data.correct = 1; // 正解
+        } else {
+          data.correct = 0; // 不正解
+        }
+    } 
+  };
+
+  timeline.push(stroop1);
+
+  var feedback = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: "不正解です！",
+    choices: ['次へ'],
+  };
+
+  const if_node = {
+    timeline: [feedback],
+    conditional_function: function(){
+        var last_trial_data = jsPsych.data.getLastTrialData().values();
+
+        if (last_trial_data[0].correct === 1) { // 正解ならば
+            return false; // フィードバックを表示しない
+        } else {
+            return true;
+        }
+    }
+  }
+  timeline.push(if_node)
+
+  jsPsych.run(timeline);
+
+  </script>
+</html>
