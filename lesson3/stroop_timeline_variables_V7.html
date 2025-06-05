@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://unpkg.com/jspsych@7.3.4"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.2.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.4"></script>
+    <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+
+  var jsPsych = initJsPsych({
+    on_finish: function() {
+      jsPsych.data.get().localSave('csv','mydata.csv');
+    }
+  });
+
+  console.log(jsPsych.version())
+
+  var timeline = [];
+
+  var instruction = {
+    type: jsPsychInstructions,
+    pages: ['<p>今からストループ課題を行います</p>'],
+    show_clickable_nav: true
+  };
+
+  timeline.push(instruction)
+
+  var fixation = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<p style="font-size: 48px; font-weight: bold;">+</p>', // <p>タグを使っています。
+    choices: "NO_KEYS", // どのキーの入力も受け付けない
+    trial_duration: 1000, // + の呈示時間 (ms)
+  };
+
+  var stroop1 = {
+    type: jsPsychHtmlButtonResponse,
+    //stimulus: '<p style="color: red; font-size: 48px; font-weight: bold;">GREEN</p>',
+    stimulus: function(){
+      return `<p style="color: ${jsPsych.timelineVariable('stim_color')}; 
+        font-size: 48px; font-weight: bold;">${jsPsych.timelineVariable('color_name')}</p>`;
+    },
+    choices: ['Green', 'Blue', 'Red'],
+    button_layout: "flex",
+    prompt: "<p>What color is this word? (flex layout)</p>",
+    on_finish: function(data){
+      // console.log(data.response)
+      if (data.response === 2) {
+        data.correct = 1; // 正解
+      } else {
+        data.correct = 0; // 不正解
+      }
+    },
+    data: {
+      stim_color: jsPsych.timelineVariable('stim_color'),
+      color_name: jsPsych.timelineVariable('color_name')
+    }
+  };
+
+  var all_trials = {
+    timeline: [fixation, stroop1],
+    timeline_variables: [
+      {stim_color: "red", color_name: "BLUE"},
+      {stim_color: "yellow", color_name: "RED"},
+      {stim_color: "BLUE", color_name: "BLUE"},
+    ],
+    randomize_order: true,
+    repetitions: 2
+  }
+
+  timeline.push(all_trials)
+
+  jsPsych.run(timeline);
+
+  </script>
+</html>
