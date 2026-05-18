@@ -37,8 +37,8 @@
     type: jsPsychHtmlButtonResponse,
     //stimulus: '<p style="color: red; font-size: 48px; font-weight: bold;">GREEN</p>',
     stimulus: function(){
-        return `<p style="color: ${jsPsych.timelineVariable('stim_color')}; 
-            font-size: 48px; font-weight: bold;">${jsPsych.timelineVariable('color_name')}</p>`;
+        return `<p style="color: ${jsPsych.evaluateTimelineVariable('stim_color')}; 
+            font-size: 48px; font-weight: bold;">${jsPsych.evaluateTimelineVariable('color_name')}</p>`;
     },
     choices: ['Green', 'Blue', 'Red'],
     button_layout: "flex",

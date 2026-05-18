@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv=“Content-Type” content=“text/html; charset=UTF-8”> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="../dist/jspsych.js"></script>
     <script src="../dist/plugin-survey-likert.js"></script>
     <script src="../dist/plugin-instructions.js"></script>
@@ -43,7 +43,7 @@
         scale_width: 500,
         on_finish: function(data) {
           // ここにデータを整形する命令を加える
-          // https://www.jspsych.org/7.3/reference/jspsych-data/#jspsychdataaddproperties
+          // https://www.jspsych.org/latest/reference/jspsych-data/#jspsychdataaddproperties
           jsPsych.data.addProperties(data.response);
         }
     };

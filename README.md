@@ -2,7 +2,9 @@
 プログラミングと統計のワークショップ
 
 # お知らせ
+- [2026年度の予定](https://psycho.hes.kyushu-u.ac.jp/~kurokid/wp/workshop/ws2026/)
 - [2025年度の予定](https://psycho.hes.kyushu-u.ac.jp/~kurokid/wp/workshop/ws2025/)
+- [2024年度の予定](https://psycho.hes.kyushu-u.ac.jp/~kurokid/wp/workshop/ws2024/)
 
 # シラバス（以下の内容は2023年度のものです）
 
