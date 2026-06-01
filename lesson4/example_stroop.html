@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://unpkg.com/jspsych@8.2.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@2.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@2.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-call-function@2.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-likert@2.2.0"></script>
+    <link href="https://unpkg.com/jspsych@8.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+
+  var jsPsych = initJsPsych({
+    on_finish: function() {
+      jsPsych.data.get().localSave('csv','mydata.csv');
+    }
+  });
+
+  console.log(jsPsych.version())
+
+  var timeline = [];
+
+  const myrandID = jsPsych.randomization.randomID(8);
+  var instruction = {
+    type: jsPsychInstructions,
+    pages: ['<p>今からストループ課題を行います</p>'],
+    show_clickable_nav: true,
+    on_finish: function(data){
+      jsPsych.data.addProperties({
+        randomID: myrandID
+      })
+    }
+  };
+
+  timeline.push(instruction)
+
+  var fixation = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<p style="font-size: 48px; font-weight: bold;">+</p>', // <p>タグを使っています。
+    choices: "NO_KEYS", // どのキーの入力も受け付けない
+    trial_duration: 1000, // + の呈示時間 (ms)
+  };
+
+  var stroop1 = {
+    type: jsPsychHtmlButtonResponse,
+    //stimulus: '<p style="color: red; font-size: 48px; font-weight: bold;">GREEN</p>',
+    stimulus: function(){
+        // https://www.jspsych.org/v8/support/migration-v8/ に書かれているように、
+        // バージョン８から、timelineVariableはevaluateTimelineVariableに変更されました。
+      return `<p style="color: ${jsPsych.evaluateTimelineVariable('stim_color')}; 
+        font-size: 48px; font-weight: bold;">${jsPsych.evaluateTimelineVariable('color_name')}</p>`;
+    },
+    choices: ['Green', 'Blue', 'Red'],
+    button_layout: "flex",
+    prompt: "<p>What color is this word? (flex layout)</p>",
+    on_finish: function(data){
+      // console.log(data.response)
+      if (data.response === 2) {
+        data.correct = 1; // 正解
+      } else {
+        data.correct = 0; // 不正解
+      }
+    },
+    data: {
+      stim_color: jsPsych.timelineVariable('stim_color'),
+      color_name: jsPsych.timelineVariable('color_name')
+    }
+  };
+
+  var all_trials = {
+    timeline: [fixation, stroop1],
+    timeline_variables: [
+      {stim_color: "red", color_name: "BLUE"},
+      {stim_color: "yellow", color_name: "RED"},
+      {stim_color: "BLUE", color_name: "BLUE"},
+    ],
+    randomize_order: true,
+    repetitions: 2
+  }
+
+  timeline.push(all_trials)
+
+  var scale = ["1<br>まったくそう思わない", "2<br>あまりそう思わない", "3<br>どちらでもない", "4<br>ややそう思う", "5<br>非常にそう思う"];
+
+  var likert_trial = {
+    type: jsPsychSurveyLikert,
+    questions: [
+      {prompt: "Question 1", labels: scale},
+      {prompt: "Question 2", labels: scale},
+      {prompt: "Question 3", labels: scale},
+    ],
+    scale_width: 500,
+    on_finish: function(data) {
+      // ここにデータを整形する命令を加える
+    }
+  };
+  timeline.push(likert_trial)
+
+  var save_trial = {
+    type: jsPsychCallFunction,
+    async: true,
+    func: function(done){
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'write_data.php');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function() {
+        if(xhr.status == 200){
+          var response = JSON.parse(xhr.responseText);
+          console.log(response.success);
+        }
+        done(); // invoking done() causes experiment to progress to next trial.
+      };
+      xhr.send(jsPsych.data.get().json());
+    }
+  }
+  timeline.push(save_trial)
+
+  jsPsych.run(timeline);
+
+  </script>
+</html>
